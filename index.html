@@ -1,1 +1,1231 @@
-HOLA MUNDO
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARTA CONTRACTORS LLC - We Build Like Spartans</title>
+    <link rel="icon" href="./img/logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --spartan-red: #8B1538;
+            --deep-red: #6B0F2A;
+            --bronze: #CD7F32;
+            --charcoal: #1C1C1C;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation - Spartan Shield Style */
+        nav {
+            background: var(--black);
+            padding: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 4px solid var(--spartan-red);
+        }
+
+        nav .nav-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .brand-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        nav .logo-helmet {
+            height: 80px;
+            width: auto;
+            filter: drop-shadow(0 0 15px rgba(139, 21, 56, 0.6));
+        }
+
+        nav .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav .company-name {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5rem;
+            color: var(--white);
+            line-height: 1;
+            letter-spacing: 3px;
+        }
+
+        nav .company-name span {
+            color: var(--spartan-red);
+        }
+
+        nav .company-tagline {
+            font-size: 0.9rem;
+            color: var(--bronze);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 0;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 1rem 1.75rem;
+            display: block;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--spartan-red);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            background: rgba(139, 21, 56, 0.1);
+            color: var(--spartan-red);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: var(--spartan-red);
+            border: 2px solid var(--bronze);
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--white);
+            font-weight: 700;
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+        }
+
+        /* Hero - Epic Spartan Style */
+        .hero {
+            background: linear-gradient(to bottom, var(--black) 0%, var(--charcoal) 100%) !important;
+            color: var(--white);
+            padding: 12rem 2rem 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(139, 21, 56, 0.03) 10px,
+                    rgba(139, 21, 56, 0.03) 20px);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--spartan-red), transparent);
+            opacity: 0.1;
+        }
+
+        .hero .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-shield-badge {
+            display: inline-block;
+            background: var(--spartan-red);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            border: 3px solid var(--bronze);
+            box-shadow: 0 0 20px rgba(139, 21, 56, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 0.9;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 0 var(--spartan-red);
+        }
+
+        .hero h1 span {
+            color: var(--spartan-red);
+            text-shadow: 3px 3px 0 var(--black);
+        }
+
+        .hero .battle-cry {
+            font-size: 2.5rem;
+            color: var(--bronze);
+            font-family: 'Bebas Neue', cursive;
+            margin-bottom: 2rem;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            line-height: 1.9;
+            opacity: 0.95;
+        }
+
+        .hero-warriors {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .warrior-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(139, 21, 56, 0.1);
+            border: 2px solid var(--spartan-red);
+            position: relative;
+        }
+
+        .warrior-stat::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border: 2px solid var(--bronze);
+            opacity: 0.3;
+        }
+
+        .warrior-icon {
+            font-size: 3.5rem;
+            color: var(--bronze);
+            margin-bottom: 1rem;
+        }
+
+        .warrior-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3.5rem;
+            color: var(--spartan-red);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .warrior-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .cta-shield {
+            display: inline-block;
+            background: var(--spartan-red);
+            color: var(--white);
+            padding: 1.5rem 4rem;
+            text-decoration: none;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            transition: all 0.3s;
+            border: 3px solid var(--bronze);
+            box-shadow: 0 8px 30px rgba(139, 21, 56, 0.4);
+            margin-top: 2rem;
+        }
+
+        .cta-shield:hover {
+            background: var(--deep-red);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(139, 21, 56, 0.6);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background: #F5F5F5;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-emblem {
+            display: inline-block;
+            background: var(--spartan-red);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--bronze);
+        }
+
+        .section-title {
+            font-size: 4rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            color: var(--spartan-red);
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* About - Battle Formation Grid */
+        .about-formation {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .formation-card {
+            background: var(--white);
+            padding: 3rem;
+            border-left: 6px solid var(--spartan-red);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .formation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: var(--spartan-red);
+            opacity: 0.05;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+
+        .formation-card h3 {
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .formation-card h3 span {
+            color: var(--spartan-red);
+        }
+
+        .formation-card p {
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Benefits - Phalanx Style */
+        .phalanx-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .phalanx-shield {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 3px solid var(--spartan-red);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .phalanx-shield::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border: 2px solid var(--bronze);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .phalanx-shield:hover::before {
+            opacity: 1;
+        }
+
+        .phalanx-shield:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(139, 21, 56, 0.4);
+        }
+
+        .shield-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--spartan-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--bronze);
+            box-shadow: 0 8px 25px rgba(139, 21, 56, 0.3);
+        }
+
+        .phalanx-shield h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            color: var(--bronze);
+        }
+
+        .phalanx-shield p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* Services - Arsenal Grid */
+        .arsenal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .arsenal-weapon {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 3rem 2.5rem;
+            border-top: 5px solid var(--spartan-red);
+            border-bottom: 5px solid var(--bronze);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .arsenal-weapon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 21, 56, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .arsenal-weapon:hover::before {
+            left: 100%;
+        }
+
+        .arsenal-weapon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(139, 21, 56, 0.4);
+        }
+
+        .weapon-icon {
+            font-size: 3.5rem;
+            color: var(--bronze);
+            margin-bottom: 1.5rem;
+        }
+
+        .arsenal-weapon h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            color: var(--white);
+        }
+
+        .arsenal-weapon p {
+            line-height: 1.8;
+            opacity: 0.9;
+            font-size: 1.05rem;
+        }
+
+        /* Gallery Carousel - Battle Scene */
+        .battle-gallery {
+            background: var(--black);
+            padding: 6rem 2rem;
+        }
+
+        .carousel-arena {
+            position: relative;
+            max-width: 1300px;
+            margin: 3rem auto;
+            overflow: hidden;
+            border: 6px solid var(--spartan-red);
+            box-shadow:
+                0 0 40px rgba(139, 21, 56, 0.5),
+                0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .carousel-scene {
+            min-width: 100%;
+            height: 700px;
+            background: #0D0D0D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-scene img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .carousel-spear {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--spartan-red);
+            color: var(--white);
+            border: 3px solid var(--bronze);
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            font-size: 2rem;
+            font-weight: 700;
+            z-index: 10;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-spear:hover {
+            background: var(--deep-red);
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 0 30px rgba(139, 21, 56, 0.8);
+        }
+
+        .carousel-spear.prev {
+            left: 2rem;
+        }
+
+        .carousel-spear.next {
+            right: 2rem;
+        }
+
+        .carousel-count {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--spartan-red);
+            color: var(--white);
+            padding: 1rem 2rem;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            border: 3px solid var(--bronze);
+            z-index: 10;
+            letter-spacing: 2px;
+        }
+
+        /* Contact - Command Center */
+        .command-center {
+            background: var(--charcoal) !important;;
+            color: var(--white);
+            padding: 6rem 2rem;
+            border-top: 6px solid var(--spartan-red);
+        }
+
+        .command-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .command-link {
+            display: block;
+            background: rgba(139, 21, 56, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+            border: 3px solid var(--spartan-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .command-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--spartan-red);
+            transition: height 0.3s;
+            z-index: 0;
+        }
+
+        .command-link:hover::before {
+            height: 100%;
+        }
+
+        .command-link:hover {
+            border-color: var(--bronze);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(139, 21, 56, 0.5);
+        }
+
+        .command-link * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .command-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--spartan-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            border: 4px solid var(--bronze);
+            box-shadow: 0 8px 25px rgba(139, 21, 56, 0.4);
+        }
+
+        .command-link h5 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .command-link p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .intel-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .intel-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-left: 5px solid var(--bronze);
+        }
+
+        .intel-item {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .intel-icon {
+            font-size: 2rem;
+            color: var(--bronze);
+            min-width: 40px;
+        }
+
+        .intel-item h4 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .intel-item p,
+        .intel-item a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+        }
+
+        .intel-item a:hover {
+            color: var(--bronze);
+        }
+
+        .map-fortress {
+            border: 6px solid var(--spartan-red);
+            overflow: hidden;
+            height: 100%;
+            min-height: 500px;
+            box-shadow:
+                0 0 30px rgba(139, 21, 56, 0.5),
+                0 15px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .map-fortress iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 4px solid var(--spartan-red);
+        }
+
+        footer .battle-motto {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--bronze);
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--black);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+                border-bottom: 4px solid var(--spartan-red);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 10rem 2rem 6rem;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero .battle-cry {
+                font-size: 1.8rem;
+            }
+
+            .hero-warriors {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+            }
+
+            .about-formation,
+            .intel-section {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel-scene {
+                height: 450px;
+            }
+
+            .carousel-spear {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .carousel-spear.prev {
+                left: 1rem;
+            }
+
+            .carousel-spear.next {
+                right: 1rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-wrapper">
+            <div class="brand-section">
+                <img src="img/logo.png" alt="SPARTA CONTRACTORS LLC" class="logo-helmet">
+                <div class="brand-text">
+                    <div class="company-name">SPARTA <span>CONTRACTORS</span></div>
+                    <div class="company-tagline">We Build Like Spartans</div>
+                </div>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">MENU</button>
+            <ul id="navMenu">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-shield-badge">PROFESSIONAL CONTRACTORS</div>
+            <h1>BUILD WITH THE<br>STRENGTH OF <span>SPARTA</span></h1>
+            <p class="battle-cry">"We Build Like Spartans"</p>
+            <p>SPARTA CONTRACTORS LLC is a professional contracting company dedicated to transforming spaces through
+                quality craftsmanship, attention to detail, and dependable service. Every project—big or small—deserves
+                precision, transparency, and commitment.</p>
+
+            <div class="hero-warriors">
+                <div class="warrior-stat">
+                    <div class="warrior-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="warrior-number">5+</div>
+                    <div class="warrior-label">Years Battle-Tested</div>
+                </div>
+                <div class="warrior-stat">
+                    <div class="warrior-icon"><i class="fas fa-medal"></i></div>
+                    <div class="warrior-number">100%</div>
+                    <div class="warrior-label">Victory Rate</div>
+                </div>
+                <div class="warrior-stat">
+                    <div class="warrior-icon"><i class="fas fa-hard-hat"></i></div>
+                    <div class="warrior-number">24/7</div>
+                    <div class="warrior-label">Ready to Deploy</div>
+                </div>
+            </div>
+
+            <a href="#contact" class="cta-shield">SUMMON THE SPARTANS</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-emblem">WHO WE ARE</div>
+                <h2 class="section-title">THE SPARTAN <span>LEGION</span></h2>
+                <p class="section-subtitle">Led by Fernando Carrera - Warriors of construction, craftsmen of excellence
+                </p>
+            </div>
+
+            <div class="about-formation">
+                <div class="formation-card">
+                    <h3>OUR <span>STORY</span></h3>
+                    <p>SPARTA CONTRACTORS LLC is a professional contracting company dedicated to transforming spaces
+                        through quality craftsmanship, attention to detail, and dependable service. We believe every
+                        project—big or small—deserves precision, transparency, and commitment.</p>
+                    <p>Our team approaches each job with a problem-solving mindset, combining technical skills with
+                        practical solutions to meet our clients' needs. From remodeling to maintenance and cleaning, we
+                        focus on delivering results that are functional, durable, and visually clean.</p>
+                </div>
+
+                <div class="formation-card">
+                    <h3>OUR <span>MISSION</span></h3>
+                    <p>To provide high-quality remodeling, maintenance, and cleaning services while building long-term
+                        relationships based on trust, responsibility, and excellent results.</p>
+
+                    <h3 style="margin-top: 2rem;">OUR <span>VISION</span></h3>
+                    <p>To become a trusted and recognized contractor in New Jersey, known for reliability, versatility,
+                        and consistent workmanship across all services.</p>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 5rem; margin-bottom: 0;">
+                <div class="section-emblem">THE PHALANX</div>
+                <h2 class="section-title">SPARTAN <span>ADVANTAGES</span></h2>
+            </div>
+
+            <div class="phalanx-grid">
+                <div class="phalanx-shield">
+                    <div class="shield-icon"><i class="fas fa-gem"></i></div>
+                    <h4>QUALITY WORKMANSHIP</h4>
+                    <p>We treat every project as if it were our own home</p>
+                </div>
+                <div class="phalanx-shield">
+                    <div class="shield-icon"><i class="fas fa-clock"></i></div>
+                    <h4>RELIABLE & ON-TIME</h4>
+                    <p>We value your time and deliver according to schedule</p>
+                </div>
+                <div class="phalanx-shield">
+                    <div class="shield-icon"><i class="fas fa-certificate"></i></div>
+                    <h4>FULLY INSURED</h4>
+                    <p>Trust our licensed and experienced team</p>
+                </div>
+                <div class="phalanx-shield">
+                    <div class="shield-icon"><i class="fas fa-users"></i></div>
+                    <h4>CUSTOMER-FOCUSED</h4>
+                    <p>We listen, adapt, and exceed expectations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-emblem">OUR ARSENAL</div>
+                <h2 class="section-title">BATTLE-READY <span>SERVICES</span></h2>
+                <p class="section-subtitle">Comprehensive construction solutions deployed with Spartan precision</p>
+            </div>
+
+            <div class="arsenal-grid">
+                <div class="arsenal-weapon">
+                    <div class="weapon-icon"><i class="fas fa-home"></i></div>
+                    <h3>REMODELING</h3>
+                    <p>Kitchen and bathroom remodeling, interior renovations, drywall installation and repair, trim and
+                        molding work, property upgrades and improvements.</p>
+                </div>
+
+                <div class="arsenal-weapon">
+                    <div class="weapon-icon"><i class="fas fa-paint-roller"></i></div>
+                    <h3>PAINTING</h3>
+                    <p>Interior and exterior painting, surface preparation, wall repairs before painting, complete
+                        painting for remodeled spaces.</p>
+                </div>
+
+                <div class="arsenal-weapon">
+                    <div class="weapon-icon"><i class="fas fa-wrench"></i></div>
+                    <h3>MAINTENANCE</h3>
+                    <p>General property maintenance, preventive maintenance services, minor repairs and adjustments,
+                        post-renovation maintenance support.</p>
+                </div>
+
+                <div class="arsenal-weapon">
+                    <div class="weapon-icon"><i class="fas fa-broom"></i></div>
+                    <h3>CLEANING</h3>
+                    <p>General and deep cleaning, post-construction cleaning, move-in/move-out cleaning, apartment and
+                        property cleaning services.</p>
+                </div>
+
+                <div class="arsenal-weapon">
+                    <div class="weapon-icon"><i class="fas fa-trash-alt"></i></div>
+                    <h3>JUNK REMOVAL</h3>
+                    <p>Construction debris removal, residential junk removal, property cleanouts, removal of unwanted
+                        furniture and materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="battle-gallery">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-emblem" style="background: var(--bronze); color: var(--charcoal);">BATTLE VICTORIES
+                </div>
+                <h2 class="section-title" style="color: var(--white);">CONQUESTS <span>COMPLETED</span></h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Witness our triumphant transformations
+                </p>
+            </div>
+
+            <div class="carousel-arena">
+                <div class="carousel-count">
+                    <span id="currentScene">1</span> / <span id="totalScenes">24</span>
+                </div>
+
+                <button class="carousel-spear prev" onclick="changeScene(-1)">❮</button>
+                <button class="carousel-spear next" onclick="changeScene(1)">❯</button>
+
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-scene"><img src="img/1.jpg" alt="Victory 1"></div>
+                    <div class="carousel-scene"><img src="img/2.jpg" alt="Victory 2"></div>
+                    <div class="carousel-scene"><img src="img/3.jpg" alt="Victory 3"></div>
+                    <div class="carousel-scene"><img src="img/4.jpg" alt="Victory 4"></div>
+                    <div class="carousel-scene"><img src="img/5.jpg" alt="Victory 5"></div>
+                    <div class="carousel-scene"><img src="img/6.jpg" alt="Victory 6"></div>
+                    <div class="carousel-scene"><img src="img/7.jpg" alt="Victory 7"></div>
+                    <div class="carousel-scene"><img src="img/8.jpg" alt="Victory 8"></div>
+                    <div class="carousel-scene"><img src="img/9.jpg" alt="Victory 9"></div>
+                    <div class="carousel-scene"><img src="img/10.jpg" alt="Victory 10"></div>
+                    <div class="carousel-scene"><img src="img/11.jpg" alt="Victory 11"></div>
+                    <div class="carousel-scene"><img src="img/12.jpg" alt="Victory 12"></div>
+                    <div class="carousel-scene"><img src="img/13.jpg" alt="Victory 13"></div>
+                    <div class="carousel-scene"><img src="img/14.jpg" alt="Victory 14"></div>
+                    <div class="carousel-scene"><img src="img/15.jpg" alt="Victory 15"></div>
+                    <div class="carousel-scene"><img src="img/16.jpg" alt="Victory 16"></div>
+                    <div class="carousel-scene"><img src="img/17.jpg" alt="Victory 17"></div>
+                    <div class="carousel-scene"><img src="img/18.jpg" alt="Victory 18"></div>
+                    <div class="carousel-scene"><img src="img/19.jpg" alt="Victory 19"></div>
+                    <div class="carousel-scene"><img src="img/20.jpg" alt="Victory 20"></div>
+                    <div class="carousel-scene"><img src="img/21.jpg" alt="Victory 21"></div>
+                    <div class="carousel-scene"><img src="img/22.jpg" alt="Victory 22"></div>
+                    <div class="carousel-scene"><img src="img/23.jpg" alt="Victory 23"></div>
+                    <div class="carousel-scene"><img src="img/24.jpg" alt="Victory 24"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="command-center">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-emblem" style="background: var(--bronze); color: var(--charcoal);">CALL TO ARMS
+                </div>
+                <h2 class="section-title" style="color: var(--white);">RALLY THE <span>SPARTANS</span></h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Join forces with us to conquer your
+                    next project</p>
+            </div>
+
+            <div class="command-grid">
+                <a href="tel:609-685-0424" class="command-link">
+                    <div class="command-icon"><i class="fas fa-phone"></i></div>
+                    <h5>CALL THE LEGION</h5>
+                    <p>(609) 685-0424</p>
+                </a>
+
+                <a href="https://wa.me/16096850424" target="_blank" class="command-link">
+                    <div class="command-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h5>WHATSAPP DISPATCH</h5>
+                    <p>Direct messaging</p>
+                </a>
+
+                <a href="mailto:Spartacontractorsllc06@gmail.com" class="command-link">
+                    <div class="command-icon"><i class="fas fa-envelope"></i></div>
+                    <h5>SEND MESSAGE</h5>
+                    <p>Email command</p>
+                </a>
+
+                <a href="sms:609-685-0424" class="command-link">
+                    <div class="command-icon"><i class="fas fa-sms"></i></div>
+                    <h5>TEXT SIGNAL</h5>
+                    <p>SMS message</p>
+                </a>
+            </div>
+
+            <div class="intel-section">
+                <div class="intel-box">
+                    <div class="intel-item">
+                        <div class="intel-icon"><i class="fas fa-crown"></i></div>
+                        <div>
+                            <h4>COMMANDER</h4>
+                            <p>Fernando Carrera</p>
+                        </div>
+                    </div>
+
+                    <div class="intel-item">
+                        <div class="intel-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>PHONE</h4>
+                            <p><a href="tel:609-685-0424">(609) 685-0424</a></p>
+                        </div>
+                    </div>
+
+                    <div class="intel-item">
+                        <div class="intel-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>EMAIL</h4>
+                            <p><a href="mailto:Spartacontractorsllc06@gmail.com">Spartacontractorsllc06@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="intel-item">
+                        <div class="intel-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>FORTRESS LOCATION</h4>
+                            <p>111 South Walter Ave<br>Trenton, NJ 08609</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-fortress">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.234567890123!2d-74.7534567!3d40.2234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s111%20South%20Walter%20Ave%2C%20Trenton%2C%20NJ%2008609!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="battle-motto">"We Build Like Spartans"</p>
+            <p>&copy; 2026 SPARTA CONTRACTORS LLC. All rights reserved.</p>
+            <p>Professional Contracting Services in New Jersey | Licensed & Insured</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSceneIndex = 0;
+        const totalScenes = 24;
+
+        function initCarousel() {
+            updateSceneCounter();
+            showScene(currentSceneIndex);
+        }
+
+        function showScene(index) {
+            const track = document.getElementById('carouselTrack');
+
+            currentSceneIndex = index;
+
+            if (currentSceneIndex >= totalScenes) currentSceneIndex = 0;
+            if (currentSceneIndex < 0) currentSceneIndex = totalScenes - 1;
+
+            track.style.transform = `translateX(-${currentSceneIndex * 100}%)`;
+
+            updateSceneCounter();
+        }
+
+        function changeScene(direction) {
+            showScene(currentSceneIndex + direction);
+        }
+
+        function updateSceneCounter() {
+            document.getElementById('currentScene').textContent = currentSceneIndex + 1;
+            document.getElementById('totalScenes').textContent = totalScenes;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeScene(-1);
+            if (e.key === 'ArrowRight') changeScene(1);
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.getElementById('carouselTrack').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.getElementById('carouselTrack').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX < touchStartX - 50) changeScene(1);
+            if (touchEndX > touchStartX + 50) changeScene(-1);
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initCarousel();
+        });
+    </script>
+</body>
+
+</html>
